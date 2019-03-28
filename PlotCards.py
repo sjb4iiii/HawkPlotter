@@ -1,5 +1,6 @@
 import os
 import statistics
+import time
 from datetime import datetime
 
 import matplotlib
@@ -13,7 +14,8 @@ from pyforms.controls import ControlCombo
 from pyforms.controls import ControlFile
 from pyforms.controls import ControlText
 from scipy.ndimage import gaussian_filter1d
-import pandas as pd
+
+import RotationDetection
 
 matplotlib.use('Agg')
 
@@ -47,8 +49,8 @@ class Hawkiiiiplotter(BaseWidget):
         # Definition of the Rod Rotator fields
         self._testfile_magnetometer = ControlFile('File Name')
         self._save_selector = ControlCheckBox("Save Graphs")
+        self._use_algorithm = ControlCheckBox("Process with algorithm")
         self._generate_plots = ControlButton('Generate Plots')
-
 
         # Hide the menu items
         self._testfile.hide()
@@ -61,18 +63,23 @@ class Hawkiiiiplotter(BaseWidget):
         self._save_selector.hide()
         self._generate_plots.hide()
         self._testfile_magnetometer.hide()
+        self._use_algorithm.hide()
 
         self.pos_lines = {}
         self.load_lines = {}
         self.average_load = {}
         self.load_standard_deviation = {}
-        self.magz_lines = []
-        self.accely_lines = []
+        self.accel = []
+        self.magx = []
+        self.magy = []
+        self.magz = []
         self.time = []
+        self.rotating = []
+        self.moving = []
         self.date_stamp = None
 
-        self._testfile.changed_event = self.__make_dictionaries
-        self._testfile_magnetometer.changed_event = self.__make_dictionaries
+        # self._testfile.changed_event = self.__make_dictionaries #Doesnt allow reset...
+        # self._testfile_magnetometer.changed_event = self.__make_dictionaries_magnetometer
         self._generate_cards.value = self.__make_cards
         self._submit_mode.value = self.__menu_view
         self._generate_plots.value = self.__plot_log_file
@@ -81,16 +88,18 @@ class Hawkiiiiplotter(BaseWidget):
         if self._mode_selector.value == "1":  # pump card generator
             self._testfile.show()
             self._time_start_hour.show()
-            self._time_start_minute.show()
+            # self._time_start_minute.show()
             self._duration.show()
             self._cards_per_graph.show()
-            self._time_between_cards.show()
+            # self._time_between_cards.show()
+            self._generate_cards.show()
             self._mode_selector.hide()
             self._save_selector.hide()
             self._submit_mode.hide()
         elif self._mode_selector.value == "0":  # rr plot generator
             self._testfile_magnetometer.show()
-            self._save_selector.show()
+            # self._save_selector.show() #not incorporated yet...
+            self._use_algorithm.show()
             self._generate_plots.show()
             self._mode_selector.hide()
             self._submit_mode.hide()
@@ -115,7 +124,6 @@ class Hawkiiiiplotter(BaseWidget):
                         split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
                         time_stamp = split_line[1]
                         datetime_str = str(self.date_stamp + " " + time_stamp)
-                        print(datetime_str)
                         datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
                         readable_time = datetime_object.strftime("%H:%M:%S")
                         # if int(time_start_hour) <= int(datetime_object.hour) <= int(time_stop_hour):
@@ -127,7 +135,6 @@ class Hawkiiiiplotter(BaseWidget):
                         split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
                         time_stamp = split_line[1]
                         datetime_str = str(self.date_stamp + " " + time_stamp)
-                        print(datetime_str)
                         datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
                         readable_time = datetime_object.strftime("%H:%M:%S")
                         load_avg = statistics.mean(split_line_values)
@@ -138,6 +145,19 @@ class Hawkiiiiplotter(BaseWidget):
                         self.load_lines[readable_time] = split_line_values[:]
                         self._generate_cards.show()
 
+    def __make_dictionaries_magnetometer(self):
+        if self._testfile == "":
+            pass
+        else:
+            fn = self._testfile_magnetometer.value
+            filename = self._testfile_magnetometer.value.split("/")[-1]
+            self.date_stamp = filename.split("_")[-1][:-4]
+            if fn is "":
+                pass
+            else:
+                with open(fn, 'r') as f:
+                    all_lines = f.readlines()
+                for line in all_lines:
                     if 'Magnetometer' in line:
                         if 'sequence' not in line:
                             split_line = [s.strip() for s in line.split(",")]
@@ -147,11 +167,11 @@ class Hawkiiiiplotter(BaseWidget):
                             magz = split_line_values[4]
                             datetime_object = datetime.strptime(time_stamp_rtu, '%H-%M-%S-%f')
                             readable_time = datetime_object.strftime("%H:%M:%S")
-                            self.time.append(datetime_object)
-                            self.magz_lines.append(magz)
-                            self.accely_lines.append(accely)
+                            self.magz_lines[datetime_object] = magz
+                            self.accely_lines[datetime_object] = accely
 
     def __make_cards(self):
+        self.__make_dictionaries()
         first_card_series = True
         card_counter = 0
         legend_list = []
@@ -166,7 +186,7 @@ class Hawkiiiiplotter(BaseWidget):
                 os.unlink(self._testfile + "/" + filename)
 
         for i, t in enumerate(self.pos_lines.keys()):
-            self._generate_cards.hide()
+            # self._generate_cards.hide()
             if card_counter == int(self._cards_per_graph.value):
                 plt.xlabel("Position")
                 plt.ylabel("Load")
@@ -195,7 +215,9 @@ class Hawkiiiiplotter(BaseWidget):
                     card_counter += 1
 
     def __plot_log_file(self):
-        """plots a "log" file with a specific name format - and data format.
+        matplotlib.use("Qt5Agg")
+
+        """plots a "log" file with a specific name format - and data format.  
 
         example log_file_name is CRC5_2019-3-20_554_minutes.log
 
@@ -204,32 +226,75 @@ class Hawkiiiiplotter(BaseWidget):
         DF:8D:7F:A0:31:36,Magnetometer,Raw,sequence,rtu_time(H-M-S-uS edmonton TZ),pod_time,accel_y,mag_x,mag_y,mag_z
         DF:8D:7F:A0:31:36,Magnetometer,b'f10d01030a2100770d17a49136f3ffa2fe9002',0,13-28-45-722903,672112.8415527344,13969,-13,-350,656
 
+        TODO: deal with the 
         """
-        matplotlib.use("Qt5Agg")
+        if self._use_algorithm.value is True:
+            RotationDetection.init()
         log_file_name = self._testfile_magnetometer.value
-        file_name = os.path.basename(log_file_name).split("/")[-1]
-        split_name = os.path.basename(file_name).split("_")
+        split_name = os.path.basename(log_file_name).split("_")
         crc_name = split_name[0]
-        print(crc_name)
         date_part = split_name[1][:-4]
+        print(date_part)
+        year, month, day = [int(d) for d in date_part.split("-")]
 
+        with open(log_file_name, 'r') as f:
+            all_lines = f.readlines()
+        for line in all_lines:
+            if "Magnetometer" in line:
+                if "sequence" not in line:
+                    if len(line) > 100:
+                        line = line.split(',')
+                        time_string = line[4]
+                        time_pod = float(line[5])
+                        accel_y = float(line[6])
+                        mag_x = float(line[7])
+                        mag_y = float(line[8])
+                        mag_z = float(line[9])
+                        datetime_object = datetime.strptime(time_string, '%H-%M-%S-%f')
+                        self.time.append(datetime_object)
+                        self.accel.append(accel_y)
+                        self.magx.append(mag_x)
+                        self.magy.append(mag_y)
+                        self.magz.append(mag_z)
+                        if self._use_algorithm.value is True:
+                            RotationDetection.process(mag_x, mag_y, mag_z, time_pod)
+                            if RotationDetection.currently_moving():
+                                self.moving.append(1)
+                            else:
+                                self.moving.append(0)
+                            if RotationDetection.currently_rotating():
+                                self.rotating.append(1)
+                            else:
+                                self.rotating.append(0)
 
-
-        fig, ax = plt.subplots(nrows=2, ncols=1, sharex=True)
-        ax[0].plot(self.time, self.magz_lines, label='Z')
+        fig, ax = plt.subplots(nrows=3, ncols=1, sharex=True)
+        ax[0].plot(self.time, self.magx, label='X')
+        ax[0].plot(self.time, self.magy, label='Y')
+        ax[0].plot(self.time, self.magz, label='Z')
         ax[0].legend()
         ax[0].grid()
         ax[0].set_ylabel("magnetometer")
-        ax[0].set_title(file_name)
+        ax[0].set_title(log_file_name)
 
-        ax[1].plot(self.time, self.accely_lines)
+        ax[1].plot(self.time, self.accel)
         ax[1].set_ylabel("accelerometer")
         ax[1].grid()
         ax[1].set_xlabel('Edmonton Time')
-        fig.tight_layout()
 
+        ax[2].plot(self.time, self.rotating, label='rotating')
+        ax[2].plot(self.time, self.moving, label='moving')
+        ax[2].legend()
+        ax[2].grid()
+        ax[2].set_ylabel("Algorithm")
+        ax[2].set_xlabel('Edmonton Time')
+        ax[2].set_title(log_file_name)
+
+        fig.tight_layout()
+        fig.show()
 
     # Execute the application
+
+
 if __name__ == "__main__":
     pyforms.start_app(Hawkiiiiplotter, geometry=(50, 50, 300, 300))
 

@@ -2,40 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98d1f8c9-a59d-49bb-95f5-a67be5d94277" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MakeAnimation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlotCards.py" beforeDir="false" afterPath="$PROJECT_DIR$/PlotCards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlotMagnetometer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/09:58:30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:00:14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:01:58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:03:41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:05:25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:07:08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:08:51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:10:35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:12:19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:14:03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:15:46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:17:29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:19:13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/10:20:57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:44:29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:46:02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:47:44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:49:27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:51:11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:52:54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:54:39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/16:56:22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:03:27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:05:10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:06:53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:08:35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:10:19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:12:01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap/22:13:44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Whitecap_2019-3-22_pumpcards.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,16 +16,16 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HawkPlotter$testing.coverage" NAME="testing Coverage Results" MODIFIED="1553741855184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HawkPlotter$crc_plotter.coverage" NAME="crc_plotter Coverage Results" MODIFIED="1553793562675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HawkPlotter$PlotCards.coverage" NAME="PlotCards Coverage Results" MODIFIED="1553799502956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HawkPlotter$PlotCards.coverage" NAME="PlotCards Coverage Results" MODIFIED="1553845333516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HawkPlotter$PlotMagnetometer.coverage" NAME="PlotMagnetometer Coverage Results" MODIFIED="1553731689668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlotCards.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1721">
-              <caret line="267" column="55" selection-start-line="267" selection-start-column="55" selection-end-line="267" selection-end-column="55" />
+            <state relative-caret-position="1778">
+              <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -64,8 +34,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MakeAnimation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider" />
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="-4685" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -97,12 +78,13 @@
         <option value="$PROJECT_DIR$/testinglinebar.py" />
         <option value="$PROJECT_DIR$/testing.py" />
         <option value="$PROJECT_DIR$/crc_plotter.py" />
+        <option value="$PROJECT_DIR$/MakeAnimation.py" />
         <option value="$PROJECT_DIR$/PlotCards.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="714" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectView">
@@ -132,10 +114,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -258,12 +240,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553568517670</updated>
-      <workItem from="1553568519136" duration="56571000" />
+      <workItem from="1553568519136" duration="58328000" />
+      <workItem from="1553817255883" duration="104000" />
+      <workItem from="1553821987444" duration="1172000" />
+      <workItem from="1553844785956" duration="2416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56571000" />
+    <option name="totallyTimeSpent" value="62020000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -275,11 +260,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13447782" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14306152" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -289,7 +273,7 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.19397591" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.16144578" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -328,191 +312,89 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-22_pumpcards.log">
+    <entry file="file://$PROJECT_DIR$/PlotMagnetometer.py" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:49:12.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:52:40.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:57:52.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/01:04:48.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/01:08:18.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/07:30:56.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/07:36:14.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/20:47:35.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/20:51:03.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/20:54:33.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:44:29.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:46:02.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:47:44.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:49:27.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:56:22.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:03:27.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:06:53.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:08:35.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:10:19.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:12:01.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:13:44.png" />
+    <entry file="file://$PROJECT_DIR$/CRC4_2019-3-24.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:59:37.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PlotMagnetometer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:31:21.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:33:05.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:34:49.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:36:35.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:40:04.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:41:48.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:43:33.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:45:19.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/08:25:06.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/09:58:30.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:22:36.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:29:37.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/00:38:19.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/08:26:52.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/09:13:13.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/09:18:27.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/10:19:13.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:51:11.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/16:54:39.png" />
+    <entry file="file://$PROJECT_DIR$/Whitecap/22:05:10.png" />
+    <entry file="file://$PROJECT_DIR$/testing.py" />
+    <entry file="file://$PROJECT_DIR$/crc_plotter.py" />
+    <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards2.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-21221" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:49:12.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:52:40.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:57:52.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/01:04:48.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/01:08:18.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/07:30:56.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/07:36:14.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/20:47:35.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/20:51:03.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/20:54:33.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:44:29.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:46:02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:47:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:49:27.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:56:22.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:03:27.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:06:53.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:08:35.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:10:19.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:12:01.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:13:44.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards2.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/RotationDetection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
+        <state relative-caret-position="2062">
           <caret line="178" column="20" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CRC4_2019-3-24.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:31:21.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:33:05.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:34:49.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:36:35.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:40:04.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:41:48.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:43:33.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:45:19.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/08:25:06.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/09:58:30.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:22:36.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:29:37.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/00:38:19.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/08:26:52.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/09:13:13.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/09:18:27.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/10:19:13.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:51:11.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/16:54:39.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap/22:05:10.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="99" selection-start-line="99" selection-end-line="103" selection-end-column="25" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-4685" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PlotCards.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1721">
-          <caret line="267" column="55" selection-start-line="267" selection-start-column="55" selection-end-line="267" selection-end-column="55" />
+        <state relative-caret-position="1778">
+          <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crc_plotter.py">
+    <entry file="file://$PROJECT_DIR$/MakeAnimation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="25" column="13" selection-start-line="21" selection-start-column="4" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Whitecap_2019-3-24_pumpcards.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
   </component>
 </project>

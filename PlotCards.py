@@ -99,7 +99,7 @@ class Hawkiiiiplotter(BaseWidget):
         elif self._mode_selector.value == "0":  # rr plot generator
             self._testfile_magnetometer.show()
             # self._save_selector.show() #not incorporated yet...
-            self._use_algorithm.show()
+            self._use_algorithm.hide()
             self._generate_plots.show()
             self._mode_selector.hide()
             self._submit_mode.hide()
@@ -120,30 +120,34 @@ class Hawkiiiiplotter(BaseWidget):
                     all_lines = f.readlines()
                 for line in all_lines:
                     if 'position' in line:
-                        split_line = [s.strip() for s in line.split(",")[:2]]
-                        split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
-                        time_stamp = split_line[1]
-                        datetime_str = str(self.date_stamp + " " + time_stamp)
-                        datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
-                        readable_time = datetime_object.strftime("%H:%M:%S")
-                        # if int(time_start_hour) <= int(datetime_object.hour) <= int(time_stop_hour):
-                        self.pos_lines[readable_time] = split_line_values[:]
-                        self._generate_cards.show()
+                        if len(line)
+                        print("position: " + str(len(line)))
+                        # split_line = [s.strip() for s in line.split(",")[:2]]
+                        # split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
+                        # time_stamp = split_line[1]
+                        # datetime_str = str(self.date_stamp + " " + time_stamp)
+                        # datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
+                        # readable_time = datetime_object.strftime("%H:%M:%S")
+                        # # if int(time_start_hour) <= int(datetime_object.hour) <= int(time_stop_hour):
+                        # self.pos_lines[readable_time] = split_line_values[:]
+                        # self._generate_cards.show()
 
                     if 'load' in line:
-                        split_line = [s.strip() for s in line.split(",")[:2]]
-                        split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
-                        time_stamp = split_line[1]
-                        datetime_str = str(self.date_stamp + " " + time_stamp)
-                        datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
-                        readable_time = datetime_object.strftime("%H:%M:%S")
-                        load_avg = statistics.mean(split_line_values)
-                        load_std = statistics.stdev(split_line_values)
-                        self.average_load[readable_time] = load_avg
-                        self.load_standard_deviation[readable_time] = load_std
-                        # if int(time_start_hour) <= int(datetime_object.hour) <= int(time_stop_hour):
-                        self.load_lines[readable_time] = split_line_values[:]
-                        self._generate_cards.show()
+                        print("load: " + str(len(line)))
+
+                        # split_line = [s.strip() for s in line.split(",")[:2]]
+                        # split_line_values = [float(s.strip()) for s in line.split(",")[2:]]
+                        # time_stamp = split_line[1]
+                        # datetime_str = str(self.date_stamp + " " + time_stamp)
+                        # datetime_object = datetime.strptime(datetime_str, '20%y-%m-%d %H:%M:%S:%f')
+                        # readable_time = datetime_object.strftime("%H:%M:%S")
+                        # load_avg = statistics.mean(split_line_values)
+                        # load_std = statistics.stdev(split_line_values)
+                        # self.average_load[readable_time] = load_avg
+                        # self.load_standard_deviation[readable_time] = load_std
+                        # # if int(time_start_hour) <= int(datetime_object.hour) <= int(time_stop_hour):
+                        # self.load_lines[readable_time] = split_line_values[:]
+                        # self._generate_cards.show()
 
     def __make_dictionaries_magnetometer(self):
         if self._testfile == "":
@@ -228,8 +232,8 @@ class Hawkiiiiplotter(BaseWidget):
 
         TODO: deal with the 
         """
-        if self._use_algorithm.value is True:
-            RotationDetection.init()
+        # if self._use_algorithm.value is True:
+        #     RotationDetection.init()
         log_file_name = self._testfile_magnetometer.value
         split_name = os.path.basename(log_file_name).split("_")
         crc_name = split_name[0]
@@ -240,7 +244,7 @@ class Hawkiiiiplotter(BaseWidget):
         with open(log_file_name, 'r') as f:
             all_lines = f.readlines()
         for line in all_lines:
-            if "Magnetometer" in line:
+            if "CD:2C:9A:5E:B2:98" in line:
                 if "sequence" not in line:
                     if len(line) > 100:
                         line = line.split(',')
@@ -256,16 +260,16 @@ class Hawkiiiiplotter(BaseWidget):
                         self.magx.append(mag_x)
                         self.magy.append(mag_y)
                         self.magz.append(mag_z)
-                        if self._use_algorithm.value is True:
-                            RotationDetection.process(mag_x, mag_y, mag_z, time_pod)
-                            if RotationDetection.currently_moving():
-                                self.moving.append(1)
-                            else:
-                                self.moving.append(0)
-                            if RotationDetection.currently_rotating():
-                                self.rotating.append(1)
-                            else:
-                                self.rotating.append(0)
+                        # if self._use_algorithm.value is True:
+                        #     RotationDetection.process(mag_x, mag_y, mag_z, time_pod)
+                        #     if RotationDetection.currently_moving():
+                        #         self.moving.append(1)
+                        #     else:
+                        #         self.moving.append(0)
+                        #     if RotationDetection.currently_rotating():
+                        #         self.rotating.append(1)
+                        #     else:
+                        #         self.rotating.append(0)
 
         fig, ax = plt.subplots(nrows=3, ncols=1, sharex=True)
         ax[0].plot(self.time, self.magx, label='X')
@@ -281,13 +285,13 @@ class Hawkiiiiplotter(BaseWidget):
         ax[1].grid()
         ax[1].set_xlabel('Edmonton Time')
 
-        ax[2].plot(self.time, self.rotating, label='rotating')
-        ax[2].plot(self.time, self.moving, label='moving')
-        ax[2].legend()
-        ax[2].grid()
-        ax[2].set_ylabel("Algorithm")
-        ax[2].set_xlabel('Edmonton Time')
-        ax[2].set_title(log_file_name)
+        # ax[2].plot(self.time, self.rotating, label='rotating')
+        # ax[2].plot(self.time, self.moving, label='moving')
+        # ax[2].legend()
+        # ax[2].grid()
+        # ax[2].set_ylabel("Algorithm")
+        # ax[2].set_xlabel('Edmonton Time')
+        # ax[2].set_title(log_file_name)
 
         fig.tight_layout()
         fig.show()
